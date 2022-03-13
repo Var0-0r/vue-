@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage</title>
+</head>
+
+<body>
+    <h2>localStorage</h2>
+    <button onclick="saveDate()">点我保存localStorage</button>
+    <button onclick="readDate()">点我读取localStorage</button>
+    <button onclick="deleteDate()">点我删除localStorage</button>
+    <button onclick="deleteAllDate()">点我删除localStorage</button>
+
+    <script>
+        let p = { name: "rr", age: "12" }
+        function saveDate() {
+            // localStorage.setItem() 保存一个本地存储 传递两个参数 key value 必须都是字符串格式          
+            localStorage.setItem("name", "rr");
+            localStorage.setItem("person", JSON.stringify(p));
+        }
+        function readDate() {
+            // localStorage.setItem() 保存一个本存储 传递两个参数 key value 必须都是字符串格式              
+            console.log(localStorage.getItem("name"));
+            console.log(JSON.parse(localStorage.getItem("person")))
+        }
+        function deleteDate() {
+            // localStorage.setItem() 保存一个本地存储 传递两个参数 key value 必须都是字符串格式          
+            localStorage.removeItem("name");
+        }
+        //localStorage.clear() 清空所有
+        function deleteAllDate() {
+            localStorage.clear()
+        }
+    </script>
+</body>
+
+</html>
